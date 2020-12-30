@@ -20,8 +20,11 @@ function Signup() {
       return;
     }
     async function create() {
-      let reply = await Axios.post("/newuser", details);
-      console.log(reply);
+      try {
+        let reply = await Axios.post("/newuser", details);
+      } catch (err) {
+        console.log(err);
+      }
     }
     create();
     setDetails({ name: "", password: "", check: "", email: "" });
