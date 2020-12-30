@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Axios from "./Axios.js";
 import "./Login.css";
 function Signup() {
+  const history = useHistory();
   const [details, setDetails] = useState({
     name: "",
     password: "",
@@ -27,6 +28,7 @@ function Signup() {
       }
     }
     create();
+    history.push("/login");
     setDetails({ name: "", password: "", check: "", email: "" });
   }
 
