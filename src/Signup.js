@@ -24,7 +24,7 @@ function Signup() {
       try {
         let reply = await Axios.post("/newuser", details);
       } catch (err) {
-        console.log(err);
+        alert("email id exists");
       }
     }
     create();
